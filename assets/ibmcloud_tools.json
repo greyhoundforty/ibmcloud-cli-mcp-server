@@ -1,0 +1,116 @@
+{
+  "tools": [
+    {
+      "name": "list_resources",
+      "description": "List all resources in the current IBM Cloud account",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "resource_type": {
+            "type": "string",
+            "description": "Type of resource to list (optional)",
+            "enum": ["all", "service-instances", "resource-groups"]
+          },
+          "region": {
+            "type": "string",
+            "description": "Region to filter resources (optional)"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_target",
+      "description": "Get current target information (account, region, resource group, etc.)",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "list_vpc_instances",
+      "description": "List all VPC instances in the current account",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "type": "string",
+            "description": "Region to list instances from (optional, uses current target if not specified)"
+          }
+        }
+      }
+    },
+    {
+      "name": "list_vpcs",
+      "description": "List all VPCs in the current account",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "type": "string",
+            "description": "Region to list VPCs from (optional)"
+          }
+        }
+      }
+    },
+    {
+      "name": "list_resource_groups",
+      "description": "List all resource groups in the current account",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "list_regions",
+      "description": "List all available IBM Cloud regions",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "get_account_info",
+      "description": "Get current account information",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "list_cf_apps",
+      "description": "List Cloud Foundry applications",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "org": {
+            "type": "string",
+            "description": "Cloud Foundry organization (optional)"
+          },
+          "space": {
+            "type": "string",
+            "description": "Cloud Foundry space (optional)"
+          }
+        }
+      }
+    },
+    {
+      "name": "execute_command",
+      "description": "Execute a custom IBM Cloud CLI command (read-only operations only in safe mode)",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "description": "IBM Cloud CLI command to execute (without 'ibmcloud' prefix)"
+          },
+          "safe_mode": {
+            "type": "boolean",
+            "description": "Enable safe mode to restrict to read-only operations (default: true)",
+            "default": true
+          }
+        },
+        "required": ["command"]
+      }
+    }
+  ]
+}

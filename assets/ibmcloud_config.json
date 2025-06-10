@@ -1,0 +1,18 @@
+{
+  "protocolVersion": "0.1.0",
+  "serverInfo": {
+    "name": "IBMCloudServer",
+    "version": "1.0.0",
+    "description": "MCP Server for IBM Cloud CLI operations"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": true
+    }
+  },
+  "instructions": "This server provides access to IBM Cloud CLI operations including resource management, VPC operations, and account information. Requires IBM Cloud CLI to be installed and authenticated.",
+  "environment": {
+    "required_tools": ["ibmcloud", "jq"],
+    "optional_plugins": ["vpc-infrastructure", "cloud-functions", "kubernetes-service"]
+  }
+}
